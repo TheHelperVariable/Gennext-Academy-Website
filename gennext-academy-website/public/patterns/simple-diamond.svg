@@ -1,0 +1,19 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="simple-diamond" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <!-- Diamond Grid -->
+      <!-- Main Lines in Lilac (User Request) -->
+      <path d="M25 0 L50 25 L25 50 L0 25 Z" fill="none" stroke="#BE95C4" stroke-width="1.5" opacity="0.5"/>
+      
+      <!-- Inner details in Dark Amethyst -->
+      <path d="M25 10 L40 25 L25 40 L10 25 Z" fill="none" stroke="#231942" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Subtle dots at intersections in Pink Orchid -->
+      <circle cx="0" cy="25" r="2" fill="#E0B1CB" opacity="0.6"/>
+      <circle cx="50" cy="25" r="2" fill="#E0B1CB" opacity="0.6"/>
+      <circle cx="25" cy="0" r="2" fill="#E0B1CB" opacity="0.6"/>
+      <circle cx="25" cy="50" r="2" fill="#E0B1CB" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#simple-diamond)" />
+</svg>

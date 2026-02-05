@@ -1,0 +1,168 @@
+.container {
+    min-height: 100vh;
+    padding-top: 80px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    /* Create new stacking context */
+}
+
+/* Dynamic Background Layer */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('/patterns/simple-diamond.svg');
+    background-size: 80px 80px;
+    /* Smaller, cleaner size */
+    opacity: 0.5;
+    z-index: -1;
+    /* Behind content */
+    pointer-events: none;
+    animation: backgroundFlow 60s linear infinite;
+    /* Slower, smoother */
+}
+
+/* Ensure content is above background */
+.heroSection,
+.missionStatement,
+.visionSection,
+.valuesSection {
+    position: relative;
+    z-index: 1;
+}
+
+/* Smoother Flow Animation (No Rotation) */
+@keyframes backgroundFlow {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+.heroSection {
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Removed gradients for clean look */
+    margin: 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bigTitle {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.introText {
+    font-size: 1.5rem;
+    max-width: 800px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    gap: 2rem;
+}
+
+.storyBlock {
+    grid-column: span 6;
+    background: var(--color-surface);
+    /* Ensure this is solid in globals, or override here */
+    background-color: #ffffff;
+    /* Explicit opacity */
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 0px rgba(141, 110, 99, 0.1);
+    /* Soft brown shadow */
+    border: 1px solid var(--color-border);
+}
+
+.imageBlock {
+    grid-column: span 6;
+    position: relative;
+    height: 500px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.valuesSection {
+    background: var(--color-primary);
+    color: white;
+    padding: 6rem 2rem;
+    margin-top: 4rem;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 4rem auto 0;
+}
+
+.valueCard h3 {
+    font-size: 2rem;
+    color: var(--color-background);
+    /* Creme text for contrast */
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .bigTitle {
+        font-size: 4rem;
+    }
+
+    .storyBlock,
+    .imageBlock {
+        grid-column: span 12;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.placeholderPanel {
+    grid-column: span 6;
+    min-height: 300px;
+    background: var(--color-surface);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .placeholderPanel {
+        grid-column: span 12;
+    }
+}

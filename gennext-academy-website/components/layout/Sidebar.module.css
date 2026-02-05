@@ -1,0 +1,89 @@
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding-left: 0.5rem;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.navItem:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-primary);
+}
+
+.navItem.active {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(35, 25, 66, 0.2);
+}
+
+.footer {
+    /* border-top: 1px solid var(--color-border); */
+    /* padding-top: 1.5rem; */
+    margin-top: auto;
+}
+
+.logoutButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.logoutButton:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+}

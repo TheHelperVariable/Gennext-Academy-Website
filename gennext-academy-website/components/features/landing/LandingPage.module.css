@@ -1,0 +1,275 @@
+/* Main Container */
+.container {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Dynamic Background Layer */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url('/patterns/simple-diamond.svg');
+    background-size: 80px 80px;
+    opacity: 0.5;
+    z-index: -1;
+    pointer-events: none;
+    animation: backgroundFlow 60s linear infinite;
+}
+
+@keyframes backgroundFlow {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+/* Mosaic Grid */
+.mosaicGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    max-width: 1600px;
+    margin: 60px auto 0;
+    /* Add margin for fixed navbar */
+    padding-bottom: 4rem;
+}
+
+/* Tile Base Styles */
+.tile {
+    background-color: var(--color-surface);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Specific Tiles */
+.heroTile {
+    grid-column: span 12;
+    height: 65vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+}
+
+.missionTile {
+    grid-column: span 8;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    background: linear-gradient(145deg, var(--color-surface), #1e1b4b);
+}
+
+.ctaTile {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+}
+
+.imageTile {
+    grid-column: span 4;
+    height: 300px;
+    position: relative;
+}
+
+.eventTile {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+/* New Panel Templates */
+.missionHomeTile {
+    grid-column: span 6;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    text-align: center;
+}
+
+.eventsPlaceholderTile {
+    grid-column: span 6;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    text-align: center;
+}
+
+/* Content Styles */
+.heroImage {
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.heroTitle {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+}
+
+.missionTile .text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.25rem;
+}
+
+/* Event Specifics */
+.eventDate {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--color-primary);
+    /* Prussian Blue */
+    color: white;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.eventTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+/* Button Reset/Styles */
+.button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 99px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.buttonPrimary {
+    background: white;
+    color: var(--color-primary);
+}
+
+.buttonPrimary:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+}
+
+.buttonOutline {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.buttonOutline:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .missionTile {
+        grid-column: span 12;
+    }
+
+    .ctaTile {
+        grid-column: span 6;
+    }
+
+    .imageTile {
+        grid-column: span 6;
+    }
+
+    .eventTile {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .mosaicGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .tile {
+        grid-column: span 1 !important;
+    }
+
+    .heroTile {
+        height: 80vh;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+}

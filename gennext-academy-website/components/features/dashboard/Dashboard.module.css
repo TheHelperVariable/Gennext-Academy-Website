@@ -1,0 +1,45 @@
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.header {
+    margin-bottom: 4rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.welcomeTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #231942;
+    /* Dark Amethyst */
+}
+
+.positiveMessage {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.assignmentsGrid {
+    display: grid;
+    gap: 1.5rem;
+    /* Placeholder grid */
+}
+
+.assignmentCard {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+}

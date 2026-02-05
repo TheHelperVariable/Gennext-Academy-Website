@@ -1,0 +1,197 @@
+/* Main Container */
+.container {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Hero Panel */
+.heroPanel {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.heroImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.primaryButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 99px;
+    background-color: var(--color-primary);
+    color: white;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.primaryButton:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+.secondaryButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 99px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondaryButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Mission Section */
+.missionContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.missionText {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+}
+
+.missionText p {
+    margin-bottom: 1.5rem;
+}
+
+.missionImageContainer {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.missionImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Events Section */
+.eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.eventCard {
+    background-color: var(--color-surface);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-fast);
+}
+
+.eventCard:hover {
+    transform: translateY(-5px);
+}
+
+.eventImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.eventDetails {
+    padding: 1.5rem;
+}
+
+.eventDate {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.eventTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.eventDescription {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
